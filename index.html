@@ -1,296 +1,772 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mikaelle Pinheiro · Dev</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mikaelle Pinheiro · Dev</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="dark-theme">
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+    <div class="scroll-line" id="scrollLine"></div>
 
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
-<div class="scroll-line" id="scrollLine"></div>
+    <nav>
+      <div class="nav-logo">mika<span>.</span>dev</div>
+      <ul class="nav-links">
+        <li>
+          <a href="#about" data-pt="sobre" data-en="about" data-es="sobre"
+            >sobre</a
+          >
+        </li>
+        <li>
+          <a
+            href="#skills"
+            data-pt="ferramentas"
+            data-en="tools"
+            data-es="herramientas"
+            >ferramentas</a
+          >
+        </li>
+        <li>
+          <a
+            href="#experience"
+            data-pt="experiência"
+            data-en="experience"
+            data-es="experiencia"
+            >experiência</a
+          >
+        </li>
+        <li>
+          <a
+            href="#projects"
+            data-pt="projetos"
+            data-en="projects"
+            data-es="proyectos"
+            >projetos</a
+          >
+        </li>
+        <li>
+          <a
+            href="#certifications"
+            data-pt="conquistas"
+            data-en="achievements"
+            data-es="logros"
+            >conquistas</a
+          >
+        </li>
+      </ul>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">mika<span>.</span>dev</div>
-  <ul class="nav-links">
-    <li><a href="#skills">skills</a></li>
-    <li><a href="#projects">projetos</a></li>
-    <li><a href="#about">sobre</a></li>
-    <li><a href="#contact">contato</a></li>
-  </ul>
-</nav>
+      <div class="nav-actions">
+        <div class="lang-dropdown">
+          <button
+            id="langToggleBtn"
+            class="nav-btn lang-toggle"
+            title="Mudar Idioma"
+          >
+            PT 🇧🇷
+          </button>
+          <div class="lang-menu" id="langMenu">
+            <button class="lang-option" data-lang="PT">PT 🇧🇷</button>
+            <button class="lang-option" data-lang="EN">EN 🇺🇸</button>
+            <button class="lang-option" data-lang="ES">ES 🇪🇸</button>
+          </div>
+        </div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-grid-bg"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-glow2"></div>
-  <div class="kitty-bow kitty-bow-1">🎀</div>
-  <div class="kitty-bow kitty-bow-2">🎀</div>
-
-  <div class="hero-content">
-    <div class="hero-tag">disponível para oportunidades</div>
-    <h1 class="hero-name">
-      Mikaelle<br>
-      <span class="highlight">Pinheiro</span>
-    </h1>
-    <p class="hero-role">
-      <span class="typing-text" id="typingText">Java Developer</span>
-    </p>
-    <p class="hero-desc">
-      Estudante de Ciência da Computação apaixonada por criar interfaces bonitas e experiências mobile com Flutter. Onde design encontra lógica.
-    </p>
-    <div class="hero-btns">
-      <a href="#projects" class="btn btn-primary">ver projetos ↓</a>
-      <a href="https://github.com/mikapinheiro" target="_blank" class="btn btn-ghost">github →</a>
-    </div>
-  </div>
-
-  <!-- Terminal -->
-  <div class="terminal">
-    <div class="terminal-bar">
-      <div class="dot dot-r"></div>
-      <div class="dot dot-y"></div>
-      <div class="dot dot-g"></div>
-      <div class="terminal-title">mikaelle.json</div>
-    </div>
-    <div class="terminal-body">
-      <span class="t-line t-bracket">{</span>
-      <span class="t-line">&nbsp;&nbsp;<span class="t-key">"nome"</span>: <span class="t-str">"Mikaelle Pinheiro"</span>,</span>
-      <span class="t-line">&nbsp;&nbsp;<span class="t-key">"role"</span>: <span class="t-str">"Java &amp; Front-end Dev"</span>,</span>
-      <span class="t-line">&nbsp;&nbsp;<span class="t-key">"localização"</span>: <span class="t-str">"Brasil 🇧🇷"</span>,</span>
-      <span class="t-line">&nbsp;&nbsp;<span class="t-key">"stack"</span>: <span class="t-bracket">[</span></span>
-      <span class="t-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-str">"Java"</span>, <span class="t-str">"Spring Boot"</span>,</span>
-      <span class="t-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-str">"React"</span>, <span class="t-str">"Angular"</span>,</span>
-      <span class="t-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-str">"Flutter"</span>, <span class="t-str">"Dart"</span>,</span>
-      <span class="t-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-str">"HTML"</span>, <span class="t-str">"CSS"</span>, <span class="t-str">"JS"</span></span>
-      <span class="t-line">&nbsp;&nbsp;<span class="t-bracket">]</span>,</span>
-      <span class="t-line">&nbsp;&nbsp;<span class="t-key">"também"</span>: <span class="t-bracket">[</span><span class="t-str">"Design"</span>, <span class="t-str">"Marketing"</span><span class="t-bracket">]</span>,</span>
-      <span class="t-line">&nbsp;&nbsp;<span class="t-key">"combustível"</span>: <span class="t-str">"cappuccino ☕"</span>,</span>
-      <span class="t-line">&nbsp;&nbsp;<span class="t-key">"status"</span>: <span class="t-str">"open to work ✨"</span></span>
-      <span class="t-line t-bracket">}</span>
-    </div>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section class="skills-section" id="skills">
-  <div class="section-label">01 · habilidades</div>
-  <h2 class="section-title">O que eu faço</h2>
-
-  <div class="skills-grid">
-    <div class="skill-card skill-java fade-up">
-      <div class="skill-icon">☕</div>
-      <h3>Java · Back-end</h3>
-      <p style="font-size:0.78rem;color:var(--muted);margin-bottom:0.9rem;line-height:1.6;">A linguagem que o mercado ama e paga bem. Desenvolvimento back-end robusto, APIs e sistemas enterprise.</p>
-      <div class="skill-tags">
-        <span class="tag" style="border-color:rgba(255,116,67,0.4);color:#ff7443;">Java</span>
-        <span class="tag" style="border-color:rgba(255,116,67,0.3);color:#ffaa80;">Spring Boot</span>
-        <span class="tag" style="border-color:rgba(255,116,67,0.3);color:#ffaa80;">REST APIs</span>
-        <span class="tag" style="border-color:rgba(255,116,67,0.3);color:#ffaa80;">SQL</span>
-        <span class="tag" style="border-color:rgba(255,116,67,0.3);color:#ffaa80;">POO</span>
+        <button id="themeToggle" class="nav-btn" title="Alternar Tema">
+          <img src="img/sol.png" id="themeIcon" alt="Modo Claro" width="18" />
+        </button>
       </div>
-    </div>
-    <div class="skill-card fade-up">
-      <div class="skill-icon">📱</div>
-      <h3>Mobile Development</h3>
-      <div class="skill-tags">
-        <span class="tag">Flutter</span>
-        <span class="tag">Dart</span>
-        <span class="tag">UI/UX Mobile</span>
-        <span class="tag">App Dev</span>
-      </div>
-    </div>
-    <div class="skill-card fade-up">
-      <div class="skill-icon">🌐</div>
-      <h3>Front-end Web</h3>
-      <div class="skill-tags">
-        <span class="tag">HTML5</span>
-        <span class="tag">CSS3</span>
-        <span class="tag">JavaScript</span>
-        <span class="tag" style="border-color:rgba(97,218,251,0.4);color:#61dafb;">React</span>
-        <span class="tag" style="border-color:rgba(221,0,49,0.4);color:#ff4d6d;">Angular</span>
-        <span class="tag">Responsive</span>
-      </div>
-    </div>
-    <div class="skill-card fade-up">
-      <div class="skill-icon">🐍</div>
-      <h3>Outras Linguagens</h3>
-      <div class="skill-tags">
-        <span class="tag" style="border-color:rgba(55,118,171,0.4);color:#4ea8de;">Python</span>
-        <span class="tag" style="border-color:rgba(0,116,163,0.4);color:#5cc8f5;">MySQL</span>
-        <span class="tag" style="border-color:rgba(150,100,255,0.4);color:#b48eff;">C++</span>
-        <span class="tag" style="border-color:rgba(104,33,122,0.4);color:#d08ff5;">C#</span>
-        <span class="tag" style="border-color:rgba(100,100,200,0.4);color:#9999e0;">C</span>
-      </div>
-    </div>
-  </div>
-</section>
+    </nav>
 
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="section-label">02 · projetos</div>
-  <h2 class="section-title">O que eu construo</h2>
+    <section class="hero">
+      <div class="hero-grid-bg"></div>
+      <div class="hero-glow"></div>
+      <div class="hero-glow2"></div>
+      <div class="kitty-bow kitty-bow-1">🎀</div>
+      <div class="kitty-bow kitty-bow-2">🎀</div>
 
-  <div class="projects-grid">
-    <a href="https://github.com/mikapinheiro/SCAF" target="_blank" class="project-card fade-up">
-      <div class="featured-badge">⭐ destaque</div>
-      <div class="project-number">// 001</div>
-      <div class="project-name">
-        SCAF
-        <span class="project-arrow">↗</span>
+      <div class="hero-content">
+        <div
+          class="hero-tag"
+          data-pt="disponível para oportunidades"
+          data-en="available for opportunities"
+          data-es="disponible para oportunidades"
+        >
+          disponível para oportunidades
+        </div>
+        <h1 class="hero-name">
+          Mikaelle<br />
+          <span class="highlight">Pinheiro</span>
+        </h1>
+        <p class="hero-role">
+          <span class="typing-text" id="typingText">Java Developer</span>
+        </p>
+        <p
+          class="hero-desc"
+          data-pt="Graduanda em Ciência da Computação apaixonada por construir aplicações e resolver problemas no ecossistema Java, Python, React e Flutter."
+          data-en="Computer Science undergrad passionate about building apps and solving problems in the Java, Python, React, and Flutter ecosystem."
+          data-es="Estudiante de Ciencias de la Computación apasionada por construir aplicaciones y resolver problemas en el ecosistema Java, Python, React y Flutter."
+        >
+          Graduanda em Ciência da Computação apaixonada por construir aplicações
+          e resolver problemas no ecossistema Java, Python, React e Flutter.
+        </p>
+        <div class="hero-btns">
+          <a
+            href="#projects"
+            class="btn btn-primary"
+            data-pt="ver projetos ↓"
+            data-en="view projects ↓"
+            data-es="ver proyectos ↓"
+            >ver projetos ↓</a
+          >
+          <a
+            href="https://github.com/mikapinheiro"
+            target="_blank"
+            class="btn btn-ghost"
+            >github →</a
+          >
+          <a
+            href="assets/CV_MikaellePinheiro.pdf"
+            download
+            class="btn btn-outline"
+            data-pt="baixar cv"
+            data-en="download cv"
+            data-es="descargar cv"
+            >baixar cv</a
+          >
+        </div>
       </div>
-      <p class="project-desc">
-        Sistema de Controle e Análise de Falhas — Projeto Integrador desenvolvido em parceria com a Petrobras (Programa SAGA). Full-stack com React, Java e banco de dados.
-      </p>
-      <div class="project-stack">
-        <span class="stack-badge badge-js">JavaScript</span>
-        <span class="stack-badge badge-react">React</span>
-        <span class="stack-badge badge-java">Java</span>
-        <span class="stack-badge badge-css">CSS</span>
-      </div>
-    </a>
 
-    <a href="https://github.com/mikapinheiro/RedsApp1" target="_blank" class="project-card fade-up">
-      <div class="project-number">// 002</div>
-      <div class="project-name">
-        RedsApp1
-        <span class="project-arrow">↗</span>
+      <div class="terminal">
+        <div class="terminal-bar">
+          <div class="dot dot-r"></div>
+          <div class="dot dot-y"></div>
+          <div class="dot dot-g"></div>
+          <div class="terminal-title">mikaelle.json</div>
+        </div>
+        <div class="terminal-body">
+          <span class="t-line t-bracket">{</span>
+          <span class="t-line">
+            <span class="t-key">"nome"</span>:
+            <span class="t-str">"Mikaelle Pinheiro"</span>,</span
+          >
+          <span class="t-line">
+            <span class="t-key">"role"</span>:
+            <span class="t-str">"Java & Front-end Dev"</span>,</span
+          >
+          <span class="t-line">
+            <span class="t-key">"localização"</span>:
+            <span class="t-str">"Brasil BR"</span>,</span
+          >
+          <span class="t-line">
+            <span class="t-key">"stack"</span>:
+            <span class="t-bracket">[</span></span
+          >
+          <span class="t-line">
+            <span class="t-str">"Java"</span>,
+            <span class="t-str">"Spring Boot"</span>,</span
+          >
+          <span class="t-line">
+            <span class="t-str">"React"</span>,
+            <span class="t-str">"Angular"</span>,</span
+          >
+          <span class="t-line">
+            <span class="t-str">"Flutter"</span>,
+            <span class="t-str">"Dart"</span>,</span
+          >
+          <span class="t-line">
+            <span class="t-str">"HTML"</span>, <span class="t-str">"CSS"</span>,
+            <span class="t-str">"JS"</span></span
+          >
+          <span class="t-line"> <span class="t-bracket">]</span>,</span>
+          <span class="t-line">
+            <span class="t-key">"também"</span>: <span class="t-bracket">[</span
+            ><span class="t-str">"Design"</span>,
+            <span class="t-str">"Marketing"</span
+            ><span class="t-bracket">]</span>,</span
+          >
+          <span class="t-line">
+            <span class="t-key">"combustível"</span>:
+            <span class="t-str">"cappuccino ☕"</span>,</span
+          >
+          <span class="t-line">
+            <span class="t-key">"status"</span>:
+            <span class="t-str">"open to work ✨"</span></span
+          >
+          <span class="t-line t-bracket">}</span>
+        </div>
       </div>
-      <p class="project-desc">
-        Aplicativo mobile desenvolvido com Flutter/Dart. Interface moderna e fluida para experiência de usuário nativa em Android e iOS.
-      </p>
-      <div class="project-stack">
-        <span class="stack-badge badge-dart">Dart</span>
-        <span class="stack-badge badge-dart">Flutter</span>
-      </div>
-    </a>
+    </section>
 
-    <a href="https://github.com/mikapinheiro/concretize" target="_blank" class="project-card fade-up">
-      <div class="project-number">// 003</div>
-      <div class="project-name">
-        Concretize
-        <span class="project-arrow">↗</span>
+    <section class="quote-section fade-up">
+      <div class="quote-container">
+        <blockquote
+          data-pt='"O espírito humano precisa prevalecer sobre a tecnologia."'
+          data-en='"The human spirit must prevail over technology."'
+          data-es='"El espíritu humano debe prevalecer sobre la tecnología."'
+        >
+          "O espírito humano precisa prevalecer sobre a tecnologia."
+        </blockquote>
+        <cite>— Albert Einstein, cientista alemão</cite>
       </div>
-      <p class="project-desc">
-        Mais um projeto mobile em Flutter, explorando arquitetura de apps e boas práticas de desenvolvimento com Dart.
-      </p>
-      <div class="project-stack">
-        <span class="stack-badge badge-dart">Dart</span>
-        <span class="stack-badge badge-dart">Flutter</span>
-      </div>
-    </a>
+    </section>
 
-    <a href="https://github.com/mikapinheiro/LadingPages" target="_blank" class="project-card fade-up">
-      <div class="project-number">// 004</div>
-      <div class="project-name">
-        LandingPages
-        <span class="project-arrow">↗</span>
+    <section class="about-section" id="about">
+      <div
+        class="section-label"
+        data-pt="01 · sobre mim"
+        data-en="01 · about me"
+        data-es="01 · sobre mí"
+      >
+        01 · sobre mim
       </div>
-      <p class="project-desc">
-        Coleção de landing pages desenvolvidas com HTML e CSS. Design responsivo e foco em conversão — onde o marketing encontra o código.
-      </p>
-      <div class="project-stack">
-        <span class="stack-badge badge-html">HTML</span>
-        <span class="stack-badge badge-css">CSS</span>
+      <h2
+        class="section-title text-center"
+        data-pt="Quem é a Mika"
+        data-en="Who is Mika"
+        data-es="Quién es Mika"
+      >
+        Quem é a Mika
+      </h2>
+
+      <div
+        class="about-grid"
+        style="
+          grid-template-columns: 1fr;
+          max-width: 800px;
+          margin: 0 auto;
+          text-align: center;
+        "
+      >
+        <div class="about-text">
+          <p
+            data-pt="Graduanda em Ciência da Computação com grande interesse em construir aplicações e resolver problemas."
+            data-en="Computer Science student highly interested in building applications and solving problems."
+            data-es="Estudiante de Ciencias de la Computación con gran interés en construir aplicaciones y resolver problemas."
+          >
+            Graduanda em
+            <span class="accent">Ciência da Computação</span> (UNIP) com grande
+            interesse em construir aplicações e resolver problemas.
+          </p>
+          <p
+            data-pt="Construí a minha base técnica explorando o desenvolvimento web e mobile, dedicando-me ao ecossistema Java (Spring Boot), React, Angular e Python, além de possuir fortes noções de Cloud (AWS) e Redes."
+            data-en="I built my technical base exploring web and mobile, dedicated to Java, React, Python, and Cloud."
+            data-es="Construí mi base técnica explorando el desarrollo web y móvil, dedicándome al ecosistema Java, React, Python y Cloud."
+          >
+            Construí a minha base técnica explorando o desenvolvimento web e
+            mobile, dedicando-me ao ecossistema
+            <strong>Java (Spring Boot)</strong>, React, Angular e
+            <strong>Python</strong>, além de possuir fortes noções de Cloud
+            (AWS) e Redes.
+          </p>
+          <p
+            data-pt="Tenho facilidade e curiosidade para aprender novas ferramentas e valorizo muito a troca de conhecimentos no ambiente de trabalho. Busco sempre aplicar o que aprendi e crescer junto da equipe!"
+            data-en="I have a natural curiosity for learning new tools and highly value knowledge exchange. I always seek to apply what I've learned and grow with the team!"
+            data-es="Tengo facilidad y curiosidad por aprender nuevas herramientas y valoro mucho el intercambio de conocimientos. ¡Busco siempre aplicar lo aprendido y crecer junto al equipo!"
+          >
+            Tenho facilidade e curiosidade para aprender novas ferramentas e
+            valorizo muito a troca de conhecimentos no ambiente de trabalho.
+            Busco sempre aplicar o que aprendi e crescer junto da equipe!
+          </p>
+        </div>
       </div>
-    </a>
+    </section>
 
-    <a href="https://github.com/mikapinheiro/ACTi" target="_blank" class="project-card fade-up">
-      <div class="project-number">// 005</div>
-      <div class="project-name">
-        ACTi
-        <span class="project-arrow">↗</span>
+    <section class="skills-section" id="skills">
+      <div
+        class="section-label"
+        data-pt="02 · arsenal"
+        data-en="02 · arsenal"
+        data-es="02 · arsenal"
+      >
+        02 · arsenal
       </div>
-      <p class="project-desc">
-        Projeto web em HTML explorando estrutura semântica e estilização, parte da jornada de aprendizado em desenvolvimento front-end.
-      </p>
-      <div class="project-stack">
-        <span class="stack-badge badge-html">HTML</span>
+      <h2
+        class="section-title text-center"
+        data-pt="Ferramentas & Tecnologias"
+        data-en="Tools & Tech"
+        data-es="Herramientas y Tecnologías"
+      >
+        Ferramentas & Tecnologias
+      </h2>
+
+      <div class="tools-container">
+        <div class="tools-category fade-up">
+          <h3
+            class="category-title"
+            data-pt="Linguagens de Programação"
+            data-en="Programming Languages"
+            data-es="Lenguajes de Programación"
+          >
+            Linguagens de Programação
+          </h3>
+          <div class="tools-showcase">
+            <div class="tool-box">
+              <i class="devicon-java-plain colored"></i><span>Java</span>
+            </div>
+            <div class="tool-box">
+              <i class="devicon-python-plain colored"></i><span>Python</span>
+            </div>
+            <div class="tool-box">
+              <i class="devicon-javascript-plain colored"></i
+              ><span>JavaScript</span>
+            </div>
+            <div class="tool-box">
+              <i class="devicon-dart-plain colored"></i><span>Dart</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tools-category fade-up" style="margin-top: 3rem">
+          <h3
+            class="category-title"
+            data-pt="Frameworks & Infraestrutura"
+            data-en="Frameworks & Infrastructure"
+            data-es="Frameworks e Infraestructura"
+          >
+            Frameworks & Infraestrutura
+          </h3>
+          <div class="tools-showcase">
+            <div class="tool-box">
+              <i class="devicon-spring-original colored"></i><span>Spring</span>
+            </div>
+            <div class="tool-box">
+              <i class="devicon-react-original colored"></i><span>React</span>
+            </div>
+            <div class="tool-box">
+              <i class="devicon-angularjs-plain colored"></i
+              ><span>Angular</span>
+            </div>
+            <div class="tool-box">
+              <i class="devicon-flutter-plain colored"></i><span>Flutter</span>
+            </div>
+            <div class="tool-box">
+              <i class="devicon-amazonwebservices-plain-wordmark colored"></i
+              ><span>AWS</span>
+            </div>
+            <div class="tool-box">
+              <i class="devicon-mysql-plain colored"></i><span>MySQL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tools-category fade-up" style="margin-top: 3rem">
+          <h3
+            class="category-title"
+            data-pt="Softwares & Ferramentas"
+            data-en="Softwares & Tools"
+            data-es="Softwares y Herramientas"
+          >
+            Softwares & Ferramentas
+          </h3>
+          <div class="tools-showcase">
+            <div class="tool-box">
+              <i class="devicon-git-plain colored"></i><span>Git</span>
+            </div>
+            <div class="tool-box">
+              <i class="devicon-docker-plain colored"></i><span>Docker</span>
+            </div>
+            <div class="tool-box">
+              <i class="devicon-figma-plain colored"></i><span>Figma</span>
+            </div>
+            <div class="tool-box">
+              <i class="devicon-intellij-plain colored"></i
+              ><span>IntelliJ</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </a>
-  </div>
-</section>
+    </section>
 
-<!-- ABOUT -->
-<section class="about-section" id="about">
-  <div class="section-label">03 · sobre mim</div>
-  <h2 class="section-title">Quem é a Mika</h2>
-
-  <div class="about-grid">
-    <div class="about-text">
-      <p>
-        Oi! Sou <strong>Mikaelle</strong>, mas pode me chamar de Mika. Sou estudante de <span class="accent">Ciência da Computação</span> e desenvolvedora apaixonada pela intersecção entre tecnologia e criatividade. e sobrevivente de código movida a cappuccino.
-      </p>
-      <p>
-        Minha maior força está no <strong>Java</strong> — back-end robusto, APIs REST e sistemas enterprise. É a linguagem que o mercado procura e eu entrego. No front, trabalho com <span class="accent">React</span> e <strong>Angular</strong>, além de HTML, CSS e JavaScript puro.
-      </p>
-      <p>
-        No mobile, uso <strong>Flutter e Dart</strong> pra criar experiências nativas incríveis. E tenho background em <span class="accent2">Design e Marketing</span>, o que me faz pensar sempre em quem vai usar o que eu crio.
-      </p>
-      <p>
-        Um dos projetos que mais me orgulha é o <strong>SCAF</strong> — sistema full-stack desenvolvido em parceria com a <span class="accent">Petrobras</span> (Programa SAGA), com React no front e Java no back. Prova de que dá pra ir longe quando você mistura código com propósito. 🚀
-      </p>
-    </div>
-
-    <div class="about-stats">
-      <div class="stat">
-        <div class="stat-num">5+</div>
-        <div class="stat-label">Repositórios</div>
+    <section id="experience">
+      <div
+        class="section-label"
+        data-pt="03 · trajetória"
+        data-en="03 · experience"
+        data-es="03 · trayectoria"
+      >
+        03 · trajetória
       </div>
-      <div class="stat">
-        <div class="stat-num">7+</div>
-        <div class="stat-label">Linguagens</div>
+      <h2
+        class="section-title text-center"
+        data-pt="Experiência Profissional"
+        data-en="Work Experience"
+        data-es="Experiencia Profesional"
+      >
+        Experiência Profissional
+      </h2>
+
+      <div class="timeline fade-up">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2026 — Presente</span>
+            <h3
+              data-pt="Estagiária / Desenvolvedora Back-end Python"
+              data-en="Intern / Back-end Python Developer"
+              data-es="Pasante / Desarrolladora Back-end Python"
+            >
+              Estagiária / Desenvolvedora Back-end Python
+            </h3>
+            <span class="timeline-org">LANX</span>
+            <p
+              data-pt="Desenvolvimento de aplicações para clientes da empresa e estudo aprofundado nas tecnologias do mercado de trabalho."
+              data-en="Application development for clients and in-depth study of market technologies."
+              data-es="Desarrollo de aplicaciones para clientes y estudio profundo de las tecnologías del mercado."
+            >
+              Desenvolvimento de aplicações para clientes da empresa e estudo
+              aprofundado nas tecnologias do mercado de trabalho.
+            </p>
+
+            <div class="location-wrapper">
+              <span class="location-trigger">📍 Ver Local</span>
+              <div class="rich-tooltip">
+                <img
+                  src="img/lanx-local.jpg"
+                  alt="LANX"
+                  onerror="
+                    this.src =
+                      'https://via.placeholder.com/250x100/1a1a24/b48eff?text=LANX'
+                  "
+                />
+                <div class="rich-tooltip-content">
+                  <h4>LANX</h4>
+                  <p>
+                    Atuação focada em Python e backend estratégico para o
+                    mercado.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2025 — 2026</span>
+            <h3
+              data-pt="Desenvolvedora Mobile"
+              data-en="Mobile Developer"
+              data-es="Desarrolladora Mobile"
+            >
+              Desenvolvedora Mobile
+            </h3>
+            <span class="timeline-org">SENAI Santos Dumont</span>
+            <p
+              data-pt="Foco em estudos de Flutter e treino para a WorldSkills, onde aplicava os conhecimentos desenvolvendo aplicações para a unidade escolar."
+              data-en="Focus on Flutter studies and WorldSkills training, developing applications for the school unit."
+              data-es="Enfoque en estudios de Flutter y entrenamiento para WorldSkills, desarrollando aplicaciones para la unidad escolar."
+            >
+              Foco em estudos de Flutter e treino para a WorldSkills, onde
+              aplicava os conhecimentos desenvolvendo aplicações para a unidade
+              escolar.
+            </p>
+
+            <div class="location-wrapper">
+              <span class="location-trigger">📍 Ver Local</span>
+              <div class="rich-tooltip">
+                <img
+                  src="img/senai-local.jpg"
+                  alt="SENAI"
+                  onerror="
+                    this.src =
+                      'https://via.placeholder.com/250x100/1a1a24/b48eff?text=SENAI'
+                  "
+                />
+                <div class="rich-tooltip-content">
+                  <h4>SENAI Santos Dumont</h4>
+                  <p>
+                    Instituição de ensino e preparação intensiva (WorldSkills).
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2024 — 2026</span>
+            <h3
+              data-pt="Jovem Aprendiz (TI)"
+              data-en="IT Apprentice"
+              data-es="Joven Aprendiz (TI)"
+            >
+              Jovem Aprendiz (TI)
+            </h3>
+            <span class="timeline-org">Petrobras</span>
+            <p
+              data-pt="Desenvolvimento de sistemas, resoluções de problemas operacionais e certificações Cloud."
+              data-en="System development, operational problem solving, and Cloud certifications."
+              data-es="Desarrollo de sistemas, resolución de problemas operativos y certificaciones Cloud."
+            >
+              Desenvolvimento de sistemas, resoluções de problemas operacionais
+              e certificações Cloud.
+            </p>
+
+            <div class="location-wrapper">
+              <span class="location-trigger">📍 Ver Local</span>
+              <div class="rich-tooltip">
+                <img
+                  src="img/petrobras-local.jpg"
+                  alt="Petrobras"
+                  onerror="
+                    this.src =
+                      'https://via.placeholder.com/250x100/1a1a24/b48eff?text=Petrobras'
+                  "
+                />
+                <div class="rich-tooltip-content">
+                  <h4>Sede Petrobras</h4>
+                  <p>Participação no Programa SAGA e imersão tecnológica.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="stat">
-        <div class="stat-num">10+</div>
-        <div class="stat-label">Tecnologias</div>
+    </section>
+
+    <section id="projects">
+      <div
+        class="section-label"
+        data-pt="04 · projetos"
+        data-en="04 · projects"
+        data-es="04 · proyectos"
+      >
+        04 · projetos
       </div>
-      <div class="stat">
-        <div class="stat-num">∞</div>
-        <div class="stat-label">Curiosidade</div>
+      <h2
+        class="section-title text-center"
+        data-pt="O que eu construo"
+        data-en="What I build"
+        data-es="Lo que construyo"
+      >
+        O que eu construo
+      </h2>
+
+      <div class="projects-layout fade-up">
+        <aside class="projects-sidebar">
+          <button class="filter-btn active" data-filter="all">🌐 Todos</button>
+          <button class="filter-btn" data-filter="sistemas">
+            💻 Sistemas & Destaques
+          </button>
+          <button class="filter-btn" data-filter="mobile">
+            📱 Aplicações Mobile
+          </button>
+          <button class="filter-btn" data-filter="web">🌍 Páginas Web</button>
+        </aside>
+
+        <div class="projects-content">
+          <a
+            href="https://github.com/mikapinheiro/SCAF"
+            target="_blank"
+            class="project-card has-bg filter-item"
+            data-category="sistemas"
+            style="background-image: url(&quot;img/petrobras.png&quot;)"
+          >
+            <div class="project-overlay"></div>
+            <div class="featured-badge">⭐ destaque</div>
+            <div class="project-content-z">
+              <div class="project-number">// 001</div>
+              <div class="project-name">
+                SCAF <span class="project-arrow">↗</span>
+              </div>
+              <p class="project-desc">
+                Sistema robusto de Análise e Controle de Falhas operacionais
+                adotado pela Petrobras.
+              </p>
+              <div class="project-stack">
+                <span class="stack-badge badge-react">React</span
+                ><span class="stack-badge badge-java">Java</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://github.com/mikapinheiro/RedsApp1"
+            target="_blank"
+            class="project-card has-bg filter-item"
+            data-category="mobile"
+            style="background-image: url(&quot;img/reds.png&quot;)"
+          >
+            <div class="project-overlay"></div>
+            <div class="project-content-z">
+              <div class="project-number">// 002</div>
+              <div class="project-name">
+                RedsApp1 <span class="project-arrow">↗</span>
+              </div>
+              <p class="project-desc">
+                Aplicativo para Controle de Vendas, experiência nativa e
+                interface moderna.
+              </p>
+              <div class="project-stack">
+                <span class="stack-badge badge-dart">Flutter</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://github.com/mikapinheiro/concretize"
+            target="_blank"
+            class="project-card has-bg filter-item"
+            data-category="mobile"
+            style="background-image: url(&quot;img/concretize2.png&quot;)"
+          >
+            <div class="project-overlay"></div>
+            <div class="project-content-z">
+              <div class="project-number">// 003</div>
+              <div class="project-name">
+                Concretize <span class="project-arrow">↗</span>
+              </div>
+              <p class="project-desc">
+                App focado em cálculo de materiais precisos para instalação de
+                Drywall.
+              </p>
+              <div class="project-stack">
+                <span class="stack-badge badge-dart">Dart</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://github.com/mikapinheiro/LadingPages"
+            target="_blank"
+            class="project-card filter-item"
+            data-category="web"
+          >
+            <div class="project-content-z">
+              <div class="project-number">// 004</div>
+              <div class="project-name">
+                LandingPages <span class="project-arrow">↗</span>
+              </div>
+              <p class="project-desc">
+                Coleção de páginas web focadas em conversão, design responsivo e
+                portfólios de clientes.
+              </p>
+              <div class="project-stack">
+                <span class="stack-badge badge-html">HTML</span
+                ><span class="stack-badge badge-css">CSS</span>
+              </div>
+            </div>
+          </a>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-label">04 · contato</div>
-  <h2 class="section-title" style="text-align:center">Vamos conversar?</h2>
+    <section id="certifications">
+      <div
+        class="section-label"
+        data-pt="05 · conquistas"
+        data-en="05 · achievements"
+        data-es="05 · logros"
+      >
+        05 · conquistas
+      </div>
+      <h2
+        class="section-title text-center"
+        data-pt="Certificações & Badges"
+        data-en="Certifications & Badges"
+        data-es="Certificaciones y Badges"
+      >
+        Certificações & Badges
+      </h2>
 
-  <div class="contact-inner">
-    <p>
-      Estou aberta a oportunidades, projetos colaborativos e boas conversas sobre tecnologia. Me encontra por aqui:
-    </p>
-    <div class="contact-links">
-      <a href="https://www.linkedin.com/in/mikaelle-pinheiro-3b0444320" target="_blank" class="contact-link">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-        LinkedIn
-      </a>
-      <a href="https://github.com/mikapinheiro" target="_blank" class="contact-link">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-        GitHub
-      </a>
-      <a href="http://instagram.com/mikpinnheiro/" target="_blank" class="contact-link">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        Instagram
-      </a>
-    </div>
-  </div>
-</section>
+      <div class="badges-grid fade-up">
+        <a
+          href="https://www.credly.com/users/mikaelle-pinheiro"
+          target="_blank"
+          class="badge-card"
+          title="AWS Cloud Foundations"
+        >
+          <img
+            src="img/awscloud.png"
+            alt="AWS Cloud Foundations"
+            class="badge-img-custom"
+          />
+        </a>
+        <a
+          href="https://www.credly.com/users/mikaelle-pinheiro"
+          target="_blank"
+          class="badge-card"
+          title="AWS Cloud Quest"
+        >
+          <img
+            src="img/cloudquest.png"
+            alt="AWS Cloud Quest"
+            class="badge-img-custom"
+          />
+        </a>
+        <a
+          href="https://www.credly.com/users/mikaelle-pinheiro"
+          target="_blank"
+          class="badge-card"
+          title="Python Essentials"
+        >
+          <img
+            src="img/python.png"
+            alt="Python Essentials"
+            class="badge-img-custom"
+          />
+        </a>
+      </div>
+    </section>
 
-<!-- FOOTER -->
-<footer>
-  <span>mikaelle pinheiro</span>
-  <span>feito com <span>♥</span> cappuccino ☕</span>
-  <span>© 2026</span>
-</footer>
+    <section id="contact">
+      <div
+        class="section-label"
+        data-pt="06 · contato"
+        data-en="06 · contact"
+        data-es="06 · contacto"
+      >
+        06 · contato
+      </div>
+      <h2
+        class="section-title text-center"
+        data-pt="Vamos conversar?"
+        data-en="Let's talk?"
+        data-es="¿Hablamos?"
+      >
+        Vamos conversar?
+      </h2>
+      <div class="contact-inner">
+        <div class="contact-links" style="justify-content: center">
+          <a href="mailto:pinheiromika0@gmail.com" class="contact-link"
+            >Email</a
+          >
+          <a
+            href="https://www.linkedin.com/in/mikaelle-pinheiro-3b0444320"
+            target="_blank"
+            class="contact-link"
+            >LinkedIn</a
+          >
+          <a
+            href="https://github.com/mikapinheiro"
+            target="_blank"
+            class="contact-link"
+            >GitHub</a
+          >
+        </div>
+      </div>
+    </section>
 
-<script src="script.js"></script>
-</body>
+    <footer>
+      <span>mikaelle pinheiro</span>
+      <span>feito com <span>♥</span> cappuccino ☕</span>
+      <span>© 2026</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
